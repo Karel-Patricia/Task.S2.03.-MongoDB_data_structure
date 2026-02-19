@@ -1,0 +1,24 @@
+[
+    {
+        "_id": {
+            "$oid": "60d5ec123456789012345686"
+        },
+        "address": {
+            "street": "Calle del Pez 15",
+            "zip": "28004",
+            "city": "Madrid",
+            "province": "Madrid"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "60d5ec123456789012345687"
+        },
+        "address": {
+            "street": "Carrer de Balmes 10",
+            "zip": "08007",
+            "city": "Barcelona",
+            "province": "Barcelona"
+        }
+    }
+]

@@ -1,0 +1,69 @@
+[
+    {
+        "_id": {
+            "$oid": "60d5ec123456789012345690"
+        },
+        "client_id": {
+            "$oid": "60d5ec123456789012345678"
+        },
+        "store_id": {
+            "$oid": "60d5ec123456789012345686"
+        },
+        "date_time": {
+            "$date": "2024-05-20T20:00:00Z"
+        },
+        "delivery_type": "home_delivery",
+        "products": [
+            {
+                "product_id": {
+                    "$oid": "60d5ec123456789012345683"
+                },
+                "quantity": 2,
+                "price_snapshot": 10.50
+            },
+            {
+                "product_id": {
+                    "$oid": "60d5ec123456789012345685"
+                },
+                "quantity": 2,
+                "price_snapshot": 2.50
+            }
+        ],
+        "total_price": 26.00,
+        "notes": "Entregar en la puerta principal",
+        "delivery_details": {
+            "delivery_employee_id": {
+                "$oid": "60d5ec123456789012345689"
+            },
+            "delivery_time": {
+                "$date": "2024-05-20T20:30:00Z"
+            }
+        }
+    },
+    {
+        "_id": {
+            "$oid": "60d5ec123456789012345691"
+        },
+        "client_id": {
+            "$oid": "60d5ec123456789012345679"
+        },
+        "store_id": {
+            "$oid": "60d5ec123456789012345687"
+        },
+        "date_time": {
+            "$date": "2024-05-21T13:00:00Z"
+        },
+        "delivery_type": "pickup",
+        "products": [
+            {
+                "product_id": {
+                    "$oid": "60d5ec123456789012345684"
+                },
+                "quantity": 1,
+                "price_snapshot": 8.00
+            }
+        ],
+        "total_price": 8.00,
+        "notes": "Sin cebolla por favor"
+    }
+]

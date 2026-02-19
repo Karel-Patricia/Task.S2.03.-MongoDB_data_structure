@@ -1,0 +1,69 @@
+db.customers.insertMany([
+  {
+    "name": "Elena Torres",
+    "address": {
+      "street": "Avenida de la Ilustración",
+      "number": 45,
+      "floor": 3,
+      "door": "C",
+      "city": "Valencia",
+      "postal_code": "46023",
+      "country": "España"
+    },
+    "phone": "611987654",
+    "email": "elena.torres@email.com",
+    "register_date": { "$date": "2024-04-12T11:20:00Z" },
+    "last_shoppings": [
+      {
+        "brand": "Ray-Ban",
+        "graduation": {
+          "right_eye": { "$numberDecimal": "1.25" },
+          "left_eye": { "$numberDecimal": "1.00" }
+        },
+        "glass_color": {
+          "right_color": "verde oscuro",
+          "left_color": "verde oscuro"
+        },
+        "frame_type": "acetate",
+        "frame_color": "negro mate",
+        "price": { "$numberDecimal": "185.00" },
+        "employee_name": "Carlos",
+        "sale_date": { "$date": "2024-09-03T16:40:00Z" }
+      }
+    ]
+  },
+  {
+    "name": "David Romero",
+    "address": {
+      "street": "Calle Gran Vía",
+      "number": 102,
+      "floor": 1,
+      "door": "B",
+      "city": "Bilbao",
+      "postal_code": "48011",
+      "country": "España"
+    },
+    "phone": "699123987",
+    "email": "david.romero@mail.es",
+    "register_date": { "$date": "2023-06-08T08:45:00Z" },
+    "recommended_by": { "$oid": "65f0c9b3e2a14d3a9c88aa12" },
+    "last_shoppings": [
+      {
+        "brand": "Oakley",
+        "graduation": {
+          "right_eye": { "$numberDecimal": "0.75" },
+          "left_eye": { "$numberDecimal": "0.50" }
+        },
+        "glass_color": {
+          "right_color": "azul espejo",
+          "left_color": "azul espejo"
+        },
+        "frame_type": "metallic",
+        "frame_color": "gris titanio",
+        "price": { "$numberDecimal": "132.90" },
+        "employee_name": "Laura",
+        "sale_date": { "$date": "2024-11-21T13:10:00Z" }
+      }
+    ]
+  }
+])

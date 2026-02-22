@@ -7,35 +7,17 @@ db.glasses.insertMany([
       "right_color": "marrón degradado",
       "left_color": "marrón degradado"
     },
-    "graduation": {
-      "left_eye": { "$numberDecimal": "1.0" },
-      "right_eye": { "$numberDecimal": "1.0" }
-    },
-    "price": { "$numberDecimal": "225.00" },
-    "provider": {
-      "name": "Luxury Eyewear Distributors",
-      "nif": "B88776655",
-      "phone": "+34 912 345 678",
-      "fax": "+34 912 345 679",
-      "address": {
-        "street": "Avenida de la Castellana",
-        "number": { "$numberInt": "100" },
-        "floor": { "$numberInt": "5" },
-        "door": { "$numberInt": "3" },
-        "city": "Madrid",
-        "postal_code": "28046",
-        "country": "España"
-      }
-    },
-    "bought_by": [
+    "price": 225.00,
+    "provider_id": ObjectId("65f0c9b3e2a14d3a9c88bb11"), 
+    "sales": [
       {
-        "name": "Julia Lopez",
-        "postal_address": "Calle Mayor 5, Madrid",
-        "phone": "600777888",
-        "email": "julia.l@email.com",
-        "register_date": { "$date": "2023-10-10T11:00:00Z" },
-        "sold_by": "Ana",
-        "sale_date": { "$date": "2024-01-20T16:45:00Z" }
+        "client_id": ObjectId("699af20b0ec1c791fc284d0c"), 
+        "employee_name": "Ana",
+        "sale_date": new Date("2024-01-20T16:45:00Z"),
+        "graduation": {
+          "left_eye": 1.0,
+          "right_eye": 1.0
+        }
       }
     ]
   },
@@ -47,36 +29,18 @@ db.glasses.insertMany([
       "right_color": "verde G-15",
       "left_color": "verde G-15"
     },
-    "graduation": {
-      "left_eye": { "$numberDecimal": "0.0" },
-      "right_eye": { "$numberDecimal": "0.0" }
-    },
-    "price": { "$numberDecimal": "145.00" },
-    "provider": {
-      "name": "Global Vision Wholesale",
-      "nif": "A11223344",
-      "phone": "+34 931 222 333",
-      "fax": "+34 931 222 444",
-      "address": {
-        "street": "Gran Via de les Corts Catalanes",
-        "number": { "$numberInt": "600" },
-        "floor": { "$numberInt": "1" },
-        "door": { "$numberInt": "4" },
-        "city": "Barcelona",
-        "postal_code": "08007",
-        "country": "España"
-      }
-    },
-    "bought_by": [
+    "price": 145.00,
+    "provider_id": ObjectId("65f0c9b3e2a14d3a9c88bb22"),
+    "sales": [
       {
-        "name": "Esteban Garcia",
-        "postal_address": "Calle Urgell 22, Barcelona",
-        "phone": "699555444",
-        "email": "esteban.g@mail.com",
-        "register_date": { "$date": "2022-05-20T09:30:00Z" },
-        "sold_by": "Marcos",
-        "sale_date": { "$date": "2023-12-12T10:15:00Z" }
+        "client_id": ObjectId("699af20b0ec1c791fc284d0d"),
+        "employee_name": "Marcos",
+        "sale_date": new Date("2023-12-12T10:15:00Z"),
+        "graduation": {
+          "left_eye": 0.0,
+          "right_eye": 0.0
+        }
       }
     ]
   }
-])
+]);

@@ -1,4 +1,5 @@
-db.customers.insertMany([
+db.customers.insertMany(
+[
   {
     "name": "Elena Torres",
     "address": {
@@ -12,13 +13,13 @@ db.customers.insertMany([
     },
     "phone": "611987654",
     "email": "elena.torres@email.com",
-    "register_date": { "$date": "2024-04-12T11:20:00Z" },
+    "register_date": new Date("2024-04-12T11:20:00Z"),
     "last_shoppings": [
       {
         "brand": "Ray-Ban",
         "graduation": {
-          "right_eye": { "$numberDecimal": "1.25" },
-          "left_eye": { "$numberDecimal": "1.00" }
+          "right_eye": 1.25,
+          "left_eye": 1.00
         },
         "glass_color": {
           "right_color": "verde oscuro",
@@ -26,9 +27,9 @@ db.customers.insertMany([
         },
         "frame_type": "acetate",
         "frame_color": "negro mate",
-        "price": { "$numberDecimal": "185.00" },
+        "price": 185.00,
         "employee_name": "Carlos",
-        "sale_date": { "$date": "2024-09-03T16:40:00Z" }
+        "sale_date": new Date("2024-09-03T16:40:00Z")
       }
     ]
   },
@@ -45,14 +46,14 @@ db.customers.insertMany([
     },
     "phone": "699123987",
     "email": "david.romero@mail.es",
-    "register_date": { "$date": "2023-06-08T08:45:00Z" },
-    "recommended_by": { "$oid": "65f0c9b3e2a14d3a9c88aa12" },
+    "register_date": new Date("2023-06-08T08:45:00Z"),
+    "recommended_by": ObjectId("65f0c9b3e2a14d3a9c88aa12"),
     "last_shoppings": [
       {
         "brand": "Oakley",
         "graduation": {
-          "right_eye": { "$numberDecimal": "0.75" },
-          "left_eye": { "$numberDecimal": "0.50" }
+          "right_eye": 0.75,
+          "left_eye": 0.50
         },
         "glass_color": {
           "right_color": "azul espejo",
@@ -60,9 +61,9 @@ db.customers.insertMany([
         },
         "frame_type": "metallic",
         "frame_color": "gris titanio",
-        "price": { "$numberDecimal": "132.90" },
+        "price": 132.90,
         "employee_name": "Laura",
-        "sale_date": { "$date": "2024-11-21T13:10:00Z" }
+        "sale_date": new Date("2024-11-21T13:10:00Z")
       }
     ]
   }

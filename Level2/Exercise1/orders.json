@@ -1,69 +1,39 @@
-[
-    {
-        "_id": {
-            "$oid": "60d5ec123456789012345690"
-        },
-        "client_id": {
-            "$oid": "60d5ec123456789012345678"
-        },
-        "store_id": {
-            "$oid": "60d5ec123456789012345686"
-        },
-        "date_time": {
-            "$date": "2024-05-20T20:00:00Z"
-        },
-        "delivery_type": "home_delivery",
-        "products": [
-            {
-                "product_id": {
-                    "$oid": "60d5ec123456789012345683"
-                },
-                "quantity": 2,
-                "price_snapshot": 10.50
-            },
-            {
-                "product_id": {
-                    "$oid": "60d5ec123456789012345685"
-                },
-                "quantity": 2,
-                "price_snapshot": 2.50
-            }
-        ],
-        "total_price": 26.00,
-        "notes": "Entregar en la puerta principal",
-        "delivery_details": {
-            "delivery_employee_id": {
-                "$oid": "60d5ec123456789012345689"
-            },
-            "delivery_time": {
-                "$date": "2024-05-20T20:30:00Z"
-            }
-        }
+db.orders.insertMany([
+  {
+    "date_time": new Date("2024-02-22T20:30:00Z"),
+    "delivery_type": "reparto",
+    "total_price": 42.50,
+    "notes": "Llamar al móvil al llegar.",
+    "client": {
+      "client_id": ObjectId("65d76c70f1a2b3c4d5e6f001"),
+      "full_name": "Patricia García",
+      "address": {
+        "street": "Calle de la Piruleta 42",
+        "zip": "08015",
+        "city": "Barcelona",
+        "province": "Barcelona"
+      },
+      "phone": "600123456"
     },
-    {
-        "_id": {
-            "$oid": "60d5ec123456789012345691"
-        },
-        "client_id": {
-            "$oid": "60d5ec123456789012345679"
-        },
-        "store_id": {
-            "$oid": "60d5ec123456789012345687"
-        },
-        "date_time": {
-            "$date": "2024-05-21T13:00:00Z"
-        },
-        "delivery_type": "pickup",
-        "products": [
-            {
-                "product_id": {
-                    "$oid": "60d5ec123456789012345684"
-                },
-                "quantity": 1,
-                "price_snapshot": 8.00
-            }
-        ],
-        "total_price": 8.00,
-        "notes": "Sin cebolla por favor"
+    "products": [
+      {
+        "product_id": ObjectId("65d76c70f1a2b3c4d5e6f002"),
+        "type": "pizza",
+        "name": "Margarita Especial",
+        "category": "Clásicas",
+        "price_unit": 12.50,
+        "quantity": 2
+      }
+    ],
+    "shop": {
+      "shop_id": ObjectId("65d76c70f1a2b3c4d5e6f003"),
+      "city": "Barcelona",
+      "address": "Av. Diagonal 100"
+    },
+    "delivery_info": {
+      "delivery_driver_id": ObjectId("65d76c70f1a2b3c4d5e6f004"),
+      "driver_name": "Juan Repartidor",
+      "delivery_finish_time": new Date("2024-02-22T21:15:00Z")
     }
-]
+  }
+]);

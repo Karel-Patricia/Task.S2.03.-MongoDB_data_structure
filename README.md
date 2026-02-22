@@ -61,61 +61,37 @@ Digitize the management of clients, suppliers, and eyeglass sales, including det
 ### Exercise 1 - Online Food Delivery
 
 ### Objective
-Design a **NoSQL database in MongoDB** to manage clients, products, orders, and stores for an online food delivery platform.
+Model a home delivery platform that manages orders, products (pizzas, hamburgers, drinks) and store staff.
 
-### Collections and Fields
+### Design Principles
 
-**Clients**
-- `_id` (unique identifier)
-- `firstName`, `lastName`
-- `address`
-- `postalCode`, `city`, `province`
-- `phoneNumber`
+* Embedded Pattern: To avoid relational behavior (Joins) and improve performance, customer and product data (including price and category at the time of purchase) are stored directly within the Order document.
 
-**Orders**
-- `_id` (unique identifier)
-- `dateTime`
-- `orderType`: delivery or pickup
-- `products`: array with quantity and product references
-- `totalPrice`
-- `note` (optional)
-- `clientId` (reference)
-- `deliveryEmployeeId` (optional reference)
-- `deliveryDateTime` (optional)
+* Historical Accuracy: By embedding the pizza category and price, the order remains unchanged even if category names change seasonally or prices increase.
 
-**Products**
-- `_id` (unique identifier)
-- `name`
-- `description`
-- `imageURL`
-- `price`
-- `category` (for pizzas, may change seasonally)
+* Dynamic Delivery Info: The delivery information object only exists in "delivery" orders, optimizing space usage.
 
-**Stores**
-- `_id` (unique identifier)
-- `address`
-- `postalCode`, `city`, `province`
-- `employees` (array of employee references)
+### Collections Summary
 
-**Employees**
-- `_id` (unique identifier)
-- `name`, `lastName`
-- `taxId` (NIF)
-- `phone`
-- `role`: cook or delivery person
-- `storeId` (reference)
+* Orders: Central document containing the customer (embedded), the product list (embedded with historical pricing), and delivery info (conditional).
 
-### Design Notes
-- A client can place multiple orders, each order belongs to a single client.  
-- Each order can include multiple products.  
-- A store can manage many orders and have multiple employees.  
-- Each delivery order is assigned to a single delivery person.  
+* Products: Pizzas (with categories), hamburgers, and drinks.
+
+* Stores & Employees: Store and staff management (cooks/delivery drivers). 
 
 ## 🛠️ Technologies
 - **Database:** MongoDB (NoSQL, document-oriented)  
 - **Containerization:** Docker  
 - **Modeling tool:** Moon Modeler (ER diagrams and JSON schema design)  
 
-## 🚀 Instalación y Ejecución
-1. Clonar el repositorio: `git clone https://github.com/Karel-Patricia/Task.S2.03.-MongoDB_data_structure.git`   
+## 🚀 Installation and Execution
+1. Clone the repository:
+`git clone https://github.com/Karel-Patricia/Task.S2.03.-MongoDB_data_structure.git`   
 cd Task.S2.03.-MongoDB_data_structure
+
+2. Start the environment (Docker):
+docker run -d -p 27017:27017 --name mongodb mongo
+
+3. Import data:
+docker cp Level2/Exercise1/orders.js mongodb:/tmp/orders.js
+docker exec -it mongodb mongosh "delivery_db" /tmp/orders.js
